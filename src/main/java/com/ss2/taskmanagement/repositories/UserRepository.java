@@ -23,4 +23,13 @@ public class UserRepository {
     public List<User> findAll(){
         return users;
     }
+
+    public User findById(int id){
+        for(User u:users){
+            if(u.getId() == id){
+                return u;
+            }
+        }
+        return null;
+    }
 }

@@ -5,11 +5,11 @@ public class Task{
     private String title;
     private String description;
     private String priority;
-    private User assignedTo;
+    private int assignedTo;
     
     public Task(){}
 
-    public Task(int id, String title, String description, String priority, User assignedTo){
+    public Task(int id, String title, String description, String priority, int assignedTo){
         this.id = id;
         this.title = title;
         this.description = description;
@@ -49,11 +49,11 @@ public class Task{
         this.priority = priority;
     }
 
-    public User getAssignedTo() {
+    public int getAssignedTo() {
         return assignedTo;
     }
 
-    public void setAssignedTo(User assignedTo) {
+    public void setAssignedTo(int assignedTo) {
         this.assignedTo = assignedTo;
     }
 }
