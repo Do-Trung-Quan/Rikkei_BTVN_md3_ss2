@@ -30,4 +30,36 @@ public class TaskRepository {
         tasks.add(task);
         return task;
     }
+
+    public Task findById(int id){
+        for(Task t:tasks){
+            if(t.getId() == id){
+                return t;
+            }
+        }
+        return null;
+    }
+
+    public Task updateTask(int id, Task task){
+        Task t = findById(id);
+        if(t != null){
+            t.setTitle(task.getTitle());
+            t.setDescription(task.getDescription());
+            t.setPriority(task.getPriority());
+            t.setAssignedTo(task.getAssignedTo());
+            return t;
+        }
+        return null;
+    }
+
+    public boolean deleteTask(int id){
+        Task t = findById(id);
+        if(t != null){
+            tasks.remove(t);
+            return true;
+        }
+        return false;
+    }
+
+    
 }

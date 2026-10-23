@@ -31,4 +31,20 @@ public class TaskService {
         //Thêm task
         return taskRepository.addTask(task);
     }
+
+    public Task updateTask(int id, Task task){
+        //Kiểm tra task id có tồn tại không?
+        if(id <= 0 || taskRepository.findById(id) == null) return null;
+
+        //Cập nhật
+        return taskRepository.updateTask(id, task);
+    }
+
+    public boolean deleteTask(int id){
+        //Kiểm tra task id có tồn tại không?
+        if(id <= 0 || taskRepository.findById(id) == null) return false;
+
+        //Xóa task
+        return taskRepository.deleteTask(id);
+    }
 }
